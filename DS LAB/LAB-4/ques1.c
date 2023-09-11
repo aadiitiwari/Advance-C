@@ -69,6 +69,27 @@ void reverse()
     }
     head = prev;
 }
+void sort()
+{
+    struct node *ptr = head;
+    struct node *cpt = NULL;
+    while (ptr->next != NULL)
+    {
+        cpt = ptr->next;
+        while (cpt != NULL)
+        {
+            if (ptr->data > cpt->data)
+            {
+                int temp;
+                temp = ptr->data;
+                ptr->data = cpt->data;
+                cpt->data = temp;
+            }
+            cpt = cpt->next;
+        }
+        ptr = ptr->next;
+    }
+}
 int main()
 {
     int x;
@@ -98,7 +119,8 @@ int main()
         }
         if (choice == 2)
         {
-            break;
+            sort();
+            traverse();
         }
         if (choice == 3)
         {
