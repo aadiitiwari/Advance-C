@@ -29,7 +29,7 @@ void insert(int data)
     }
 }
 
-void tarverse()
+void traverse()
 {
     struct node *ptr = head;
     printf("\nThe linked list is :");
@@ -42,7 +42,6 @@ void tarverse()
 void search_ll(int ele)
 {
     struct node *ptr = head;
-    int flag = 0;
     while (ptr != NULL)
     {
         if (ptr->data == ele)
@@ -50,13 +49,8 @@ void search_ll(int ele)
             printf("\nElement is found\n");
             return;
         }
-        else
-        {
-            flag = 0;
-        }
         ptr = ptr->next;
     }
-
     printf("\nNOT FOUND");
 }
 
@@ -73,7 +67,7 @@ void reverse()
         prev = current;
         current = next_node;
     }
-    head= prev;
+    head = prev;
 }
 int main()
 {
@@ -88,12 +82,12 @@ int main()
         scanf("%d", &data);
         insert(data);
     }
-    tarverse();
-    printf("\nEnter your choice :\n1.SEARCH an element in the list \n2.sort the list in ascending orfer \n3.reverse  \n0.EXIT\n");
+    traverse();
     int choice;
-    scanf("%d", &choice);
     do
     {
+        printf("\nEnter your choice :\n1.SEARCH an element in the list \n2.sort the list in ascending orfer \n3.reverse  \n0.EXIT\n");
+        scanf("%d", &choice);
         if (choice == 1)
         {
             int ele;
@@ -109,7 +103,7 @@ int main()
         if (choice == 3)
         {
             reverse();
-            tarverse();
+            traverse();
         }
     } while (choice != 0);
     return 0;
