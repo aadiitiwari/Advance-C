@@ -115,7 +115,6 @@ int main()
             printf("Enter the elemnet to search ");
             scanf("%d", &ele);
             search_ll(ele);
-            break;
         }
         if (choice == 2)
         {
